@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traffic-reproducer"
+authors = [
+  { name="Marco Tollini", email="marco.tollini1@swisscom.com" },
+  { name="Leonardo Rodoni", email="leonardo.rodoni@swisscom.com"}
+]
+version = "0.0.1"
+description = "Network Telemetry Traffic Reproducer."
+readme = "README.md"
+requires-python = ">=3.7" 
+dynamic = ["dependencies"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+repro = "pcap-reproduce:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+"Homepage" = "https://github.com/network-analytics/traffic-reproducer"
